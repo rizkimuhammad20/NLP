@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Font yang lebih modern dan terbaca */
+}
+
+body {
+    background-color: #f4f7f6; /* Warna latar belakang yang lebih terang dan netral */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 420px; /* Ukuran container yang lebih proporsional */
+    height: 650px; /* Lebih tinggi untuk menampung logo dan header */
+    background: #ffffff;
+    border-radius: 20px; /* Border radius yang lebih besar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Bayangan yang lebih lembut dan elegan */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative; /* Untuk positioning logo */
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #00529c 0%, #003366 100%); /* Gradien biru yang lebih kaya */
+    color: white;
+    padding: 25px 20px; /* Padding yang lebih luas */
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative; /* Untuk menempatkan logo */
+}
+
+.chat-header::before { /* Logo TransJakarta dengan pseudo-element */
+    content: '';
+    display: block;
+    width: 80px; /* Ukuran logo */
+    height: 40px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Transjakarta_logo.png'); /* Ganti URL ini dengan URL logo TransJakarta yang sebenarnya */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto 10px; /* Jarak bawah */
+}
+
+.chat-header h2 { 
+    font-size: 1.4rem; /* Font size header yang lebih besar */
+    font-weight: 700;
+}
+
+.chat-header p { 
+    font-size: 0.9rem; /* Font size sub-header yang lebih besar */
+    opacity: 0.9; 
+    margin-top: 5px; 
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px; /* Padding chat box yang lebih luas */
+    overflow-y: auto;
+    background-color: #e6f0f5; /* Warna latar belakang chat box yang lebih sejuk */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar pesan yang lebih besar */
+    border-bottom: 1px solid #ddd;
+}
+
+.message {
+    padding: 12px 18px; /* Padding pesan yang lebih nyaman */
+    border-radius: 12px; /* Border radius pesan yang lebih lembut */
+    max-width: 80%; /* Batas lebar pesan yang lebih fleksibel */
+    font-size: 1rem; /* Font size pesan yang lebih besar */
+    line-height: 1.5; /* Line height pesan yang lebih baik */
+    position: relative; /* Untuk ekor pesan */
+}
+
+.bot-message {
+    background: #ffffff;
+    align-self: flex-start;
+    color: #333333;
+    border-bottom-left-radius: 4px; /* Ekor pesan bot */
+}
+
+.bot-message::after { /* Ekor pesan bot */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 0;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+.user-message {
+    background: #d4edda; /* Warna hijau yang lebih lembut untuk pesan user */
+    align-self: flex-end;
+    color: #155724;
+    border-bottom-right-radius: 4px; /* Ekor pesan user */
+}
+
+.user-message::after { /* Ekor pesan user */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: #d4edda transparent transparent transparent;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px; /* Padding input area yang lebih luas */
+    background: #f8f9fa; /* Warna latar belakang input area yang lebih terang */
+    gap: 15px; /* Jarak antar elemen input yang lebih besar */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px 20px; /* Padding input field yang lebih nyaman */
+    border: 1px solid #ced4da; /* Border input field yang lebih halus */
+    border-radius: 25px; /* Border radius input field yang lebih besar */
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#userInput:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#sendBtn {
+    background: linear-gradient(135deg, #00529c 0%, #003366 100%); /* Gradien biru yang sama dengan header */
+    color: white;
+    border: none;
+    padding: 12px 25px; /* Padding tombol kirim yang lebih nyaman */
+    border-radius: 25px; /* Border radius tombol kirim yang lebih besar */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#sendBtn:hover { 
+    background: linear-gradient(135deg, #003366 0%, #001a33 100%); /* Gradien biru yang lebih gelap saat hover */
+}

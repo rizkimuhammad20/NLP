@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiJe Chatbot Analisis Sentimen</title>
+    <!-- Menghubungkan ke file CSS yang baru -->
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Bagian Header: Pseudo-element CSS akan otomatis memunculkan logo di atas h2 -->
+      <div class="chat-header">
+        <h2>🚌 TiJe Sentiment Chatbot</h2>
+        <p>Masukkan keluhan/ulasan Anda mengenai TransJakarta</p>
+      </div>
+
+      <!-- Wadah pesan chat -->
+      <div class="chat-box" id="chatBox">
+        <div class="message bot-message">
+          Halo, selamat datang! <br />
+          Ada yang bisa saya bantu terkait Aplikasi TiJe?
+        </div>
+      </div>
+
+      <!-- Area Input Pesan -->
+      <div class="chat-input-area">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Ketik ulasan di sini... (cth: Bus telat parah ac panas)"
+          autocomplete="off"
+        />
+        <button id="sendBtn">Kirim</button>
+      </div>
+    </div>
+
+    <!-- Hanya menyisakan satu tag script yang benar (menggunakan src) -->
+    <script src="/static/script.js?v=2"></script>
+  </body>
+</html>
